@@ -539,7 +539,7 @@ def GenerateParamsFile() {
 		paramFile += "OPENJ9_BRANCH:${params.OPENJ9_BRANCH}\n"
 		paramFile += "JDK_VERSION:${params.JDK_VERSION}\n"
 		paramFile += "JDK_IMPL:${params.JDK_IMPL}\n"
-		paramFile += "BUILD_LIST:${params."${env.BUILD_LIST}/${testSubDir}\n"}"
+		paramFile += "BUILD_LIST:${params.BUILD_LIST}\n}"
 		paramFile += "TARGET:${params.TARGET}\n"
 		paramFile += "CUSTOM_TARGET:${params.CUSTOM_TARGET}\n"
 		paramFile += "SDK_RESOURCE:${params.SDK_RESOURCE}\n"
