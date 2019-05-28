@@ -445,6 +445,7 @@ def testBuild() {
 				runTest()
 				post("${env.BUILD_LIST}")
                 echo "Completed RSANTH TEST"
+                GenerateParamsFile()
 			}
 		} finally {
 			if (!params.KEEP_WORKSPACE) {
