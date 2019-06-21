@@ -556,20 +556,11 @@ def GenerateParamsFile() {
 		paramFile += "LABEL=${params.LABEL}\n"
 		paramFile += "JCK_GIT_REPO=${params.JCK_GIT_REPO}\n"
 		paramFile += "SSH_AGENT_CREDENTIAL=${params.SSH_AGENT_CREDENTIAL}\n"
-
-        paramFile += "KEEP_WORKSPACE="
-        paramFile += (KEEP_WORKSPACE ? "TRUE\n" : "FALSE\n")
-
+        paramFile += "KEEP_WORKSPACE=" + String.valueOf(params.KEEP_WORKSPACE) + "\n"
 		paramFile += "ARTIFACTORY_SERVER=${params.ARTIFACTORY_SERVER}\n"
+        paramFile += "PERSONAL_BUILD=" + String.valueOf(params.PERSONAL_BUILD) + "\n"
+        paramFile += "IS_PARALLEL=" + String.valueOf(params.IS_PARALLEL) + "\n"
 
-        paramFile += "PERSONAL_BUILD="
-        paramFile += (PERSONAL_BUILD ? "TRUE\n" : "FALSE\n")
-
-        paramFile += "IS_PARALLEL="
-        paramFile += (IS_PARALLEL ? "TRUE\n" : "FALSE\n")
-
-        paramFile += "AUTO_DETECT="
-        paramFile += (AUTO_DETECT ? "TRUE\n" : "FALSE\n")
 
         writeFile file: "${BUILD_ID}-${JOB_NAME}-params.txt", text: "${paramFile}"
 
